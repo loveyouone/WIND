@@ -19,18 +19,7 @@
     License: MIT
 ]]
 
-type ConfigType__DARKLUA_TYPE_a={
-Object:Instance,
-Camera:Instance?,
-Interactive:boolean?,
-Height:number?,
-Focused:boolean,
-
-Window:any,
-WindUI:any,
-Tab:any,
-Parent:Instance,
-}local a a={cache={}, load=function(b)if not a.cache[b]then a.cache[b]={c=a[b]()}end return a.cache[b].c end}do function a.a()
+local a a={cache={}, load=function(b)if not a.cache[b]then a.cache[b]={c=a[b]()}end return a.cache[b].c end}do function a.a()
 
 local b
 
