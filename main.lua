@@ -8516,11 +8516,11 @@ aq.MenuCorner-aq.MenuPadding,
 {
 Size=UDim2.new(1,0,0,36),
 AutomaticSize=ay.Desc and"Y",
-ImageTransparency=1,
+ImageTransparency=0.85,
 Parent=ap.UIElements.Menu.Frame.ScrollingFrame,
 
 ThemeTag={
-ImageColor3="DropdownTabBackground",
+ImageColor3=Color3.fromRGB(255,255,255),
 },
 Active=not ay.Locked,
 },
