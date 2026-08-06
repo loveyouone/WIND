@@ -8510,7 +8510,7 @@ aq.MenuCorner-aq.MenuPadding,
 {
 Size=UDim2.new(1,0,0,36),
 AutomaticSize=ay.Desc and"Y",
-ImageTransparency=1,
+ImageTransparency=0.88,
 Parent=ap.UIElements.Menu.Frame.ScrollingFrame,
 
 ImageColor3=Color3.fromRGB(255,255,255),
@@ -8519,7 +8519,7 @@ Active=true,
 {
 ak.NewRoundFrame(aq.MenuCorner-aq.MenuPadding,"Glass-1.4",{
 Size=UDim2.new(1,0,1,0),
-ImageColor3=Color3.fromRGB(255,255,255),
+ImageColor3=Color3.fromRGB(200,225,255),
 ImageTransparency=1,
 Name="Highlight",
 },{
@@ -8571,8 +8571,10 @@ TextColor3="Text",
 BackgroundColor3="Text",
 },
 TextSize=15,
-BackgroundTransparency=0.2,
-TextTransparency=ar=="Dropdown"and 0 or 0.05,
+BackgroundTransparency=1,
+TextTransparency=0.05,
+TextStrokeTransparency=0.92,
+TextStrokeColor3=Color3.fromRGB(255,255,255),
 LayoutOrder=999,
 AutomaticSize="Y",
 Size=UDim2.new(1,0,0,0),
@@ -8647,7 +8649,8 @@ ay.Selected=aA==ay.Name
 end
 
 if ay.Selected and not ay.Locked then
-ay.UIElements.TabItem.ImageTransparency=an
+ay.UIElements.TabItem.ImageTransparency=0.7
+ay.UIElements.TabItem.ImageColor3=Color3.fromRGB(200,225,255)
 
 ay.UIElements.TabItem.Frame.Title.TextLabel.TextTransparency=0
 if ay.UIElements.TabIcon then
