@@ -5273,19 +5273,17 @@ ac("UICorner",{
 CornerRadius=UDim.new(1,0)
 }),
 ac("UIStroke",{
-    Thickness=1.5,
+    Thickness=1,
     ApplyStrokeMode="Border",
-    Color=Color3.fromRGB(255,255,255),
-    Transparency=0.5,
+    Color=Color3.new(1,1,1),
+    Transparency=0.4,
 },
 ac("UIGradient",{
-    Color=ColorSequence.new(Color3.fromRGB(255,255,255),Color3.fromRGB(200,220,255)),
-    Transparency=NumberSequence.new{NumberSequenceKeypoint.new(0,0.4),NumberSequenceKeypoint.new(0.5,0.2),NumberSequenceKeypoint.new(1,0.4)}
+    Color=ColorSequence.new(Color3.fromHex"40c9ff",Color3.fromHex"e81cff")
 }),
 }),
 aj,
 ak,
-
 ac("UIListLayout",{
 Padding=UDim.new(0,4),
 FillDirection="Horizontal",
