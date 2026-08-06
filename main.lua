@@ -4891,11 +4891,11 @@ end
 
 function ae.Init(af,ag)
 if not ag.Folder then
-warn"[ WindUI.ConfigManager ] Window.Folder is not specified."
+warn("[ WindUI.ConfigManager ] Window.Folder is not specified.")
 return false
 end
 if ab:IsStudio()or not writefile then
-warn"[ WindUI.ConfigManager ] The config system doesn't work in the studio."
+warn("[ WindUI.ConfigManager ] The config system doesn't work in the studio.")
 return false
 end
 
@@ -13582,7 +13582,7 @@ end)
 if not u then
 warn("[ WindUI.Window.Background ] Failed to load custom asset: "..tostring(v))
 end
-warn"[ WindUI.Window.Background ] VideoFrame may not work with custom video"
+warn("[ WindUI.Window.Background ] VideoFrame may not work with custom video")
 l=v
 end
 
@@ -15556,7 +15556,7 @@ aA.Window=aa.Window
 aA.Parent=aa.ScreenGui.Window
 
 if aa.Window then
-warn"You cannot create more than one window"
+warn("You cannot create more than one window")
 return
 end
 
