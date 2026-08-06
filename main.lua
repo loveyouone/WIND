@@ -8520,7 +8520,7 @@ Active=not ay.Locked,
 ak.NewRoundFrame(aq.MenuCorner-aq.MenuPadding,"Glass-1.4",{
 Size=UDim2.new(1,0,1,0),
 ImageColor3=Color3.fromRGB(255,255,255),
-ImageTransparency=0.6,
+ImageTransparency=1,
 Name="Highlight",
 },{
 
