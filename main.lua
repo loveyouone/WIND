@@ -8510,11 +8510,11 @@ aq.MenuCorner-aq.MenuPadding,
 {
 Size=UDim2.new(1,0,0,36),
 AutomaticSize=ay.Desc and"Y",
-ImageTransparency=0.85,
+ImageTransparency=1,
 Parent=ap.UIElements.Menu.Frame.ScrollingFrame,
 
 ImageColor3=Color3.fromRGB(255,255,255),
-Active=not ay.Locked,
+Active=true,
 },
 {
 ak.NewRoundFrame(aq.MenuCorner-aq.MenuPadding,"Glass-1.4",{
@@ -8607,9 +8607,12 @@ true
 
 if ay.Locked then
 ay.UIElements.TabItem.Frame.Title.TextLabel.TextTransparency=0.6
+ay.UIElements.TabItem.Active=false
 if ay.UIElements.TabIcon then
 ay.UIElements.TabIcon.ImageLabel.ImageTransparency=0.6
 end
+else
+ay.UIElements.TabItem.Active=true
 end
 
 if ap.Multi and typeof(ap.Value)=="string"then
@@ -8657,8 +8660,11 @@ ap.Tabs[aw]=ay
 as:Display()
 
 if ar=="Dropdown"then
-ak.AddSignal(ay.UIElements.TabItem.MouseButton1Click,function()
-if ap.Locked or ay.Locked then
+local clickConnection=ak.AddSignal(ay.UIElements.TabItem.MouseButton1Click,function()
+if ap.Locked then
+return
+end
+if ay.Locked then
 return
 end
 
