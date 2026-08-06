@@ -4894,7 +4894,7 @@ if not ag.Folder then
 warn("[ WindUI.ConfigManager ] Window.Folder is not specified.")
 return false
 end
-if ab:IsStudio()or not writefile then
+if ab:IsStudio() or not writefile then
 warn("[ WindUI.ConfigManager ] The config system doesn't work in the studio.")
 return false
 end
