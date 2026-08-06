@@ -8530,7 +8530,7 @@ Size=UDim2.new(1,0,1,0),
 ThemeTag={
 ImageColor3=Color3.fromRGB(255,255,255),
 },
-ImageTransparency=0.88，
+ImageTransparency=0.88,
 Name="Highlight",
 },{
 
