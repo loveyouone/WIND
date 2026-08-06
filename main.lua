@@ -554,7 +554,7 @@ SliderThumb="White",
 SliderIconFrom="SliderIcon",
 SliderIconTo="SliderIcon",
 
-ProgressBar="Primary",
+ProgressBar=Color3.fromRGB(200,225,255),
 ProgressBarTrack="Text",
 ProgressBarTrackTransparency=0.9,
 ProgressBarText="Text",
@@ -3679,8 +3679,8 @@ CornerRadius=UDim.new(0,8),
 }),
 
 ac("Frame",{
-BackgroundColor3=Color3.fromRGB(255,255,255),
-BackgroundTransparency=1,
+BackgroundColor3=Color3.fromRGB(220,235,255),
+BackgroundTransparency=0.75,
 Size=UDim2.fromScale(1,1),
 },{
 
@@ -4035,8 +4035,8 @@ Primary=Color3.fromHex"#0091FF",
 LabelBackground=Color3.fromHex"#000000",
 LabelBackgroundTransparency=0.83,
 
-ElementBackground=Color3.fromHex"#2A2A2C",
-ElementBackgroundTransparency=0,
+ElementBackground=Color3.fromRGB(235,245,255),
+ElementBackgroundTransparency=0.8,
 },
 
 Light={
@@ -4050,9 +4050,9 @@ Placeholder=Color3.fromHex"#555555",
 Background=Color3.fromHex"#FFFFFF",
 Button=Color3.fromHex"#18181b",
 Icon=Color3.fromHex"#52525b",
-Toggle=Color3.fromHex"#96C8FF",
-Slider=Color3.fromHex"#96C8FF",
-Checkbox=Color3.fromHex"#96C8FF",
+Toggle=Color3.fromRGB(200,225,255),
+Slider=Color3.fromRGB(200,225,255),
+Checkbox=Color3.fromRGB(200,225,255),
 
 DropdownTabBackground=Color3.fromHex"#bebebe",
 DropdownBackground=Color3.fromHex"#ffffff",
@@ -8236,9 +8236,9 @@ HorizontalAlignment="Center",
 
 ap.UIElements.Menu=ak.NewRoundFrame(aq.MenuCorner,"Squircle",{
 ThemeTag={
-ImageColor3=Color3.fromRGB(255,255,255),
+ImageColor3=Color3.fromRGB(235,245,255),
 },
-ImageTransparency=0.85,
+ImageTransparency=0.78,
 Size=UDim2.new(1,0,1,0),
 AnchorPoint=Vector2.new(1,0),
 Position=UDim2.new(1,0,0,0),
@@ -8520,7 +8520,7 @@ ImageTransparency=0.85,
 Parent=ap.UIElements.Menu.Frame.ScrollingFrame,
 
 ThemeTag={
-ImageColor3=Color3.fromRGB(255,255,255),
+ImageColor3=Color3.fromRGB(235,245,255),
 },
 Active=not ay.Locked,
 },
@@ -8528,9 +8528,9 @@ Active=not ay.Locked,
 ak.NewRoundFrame(aq.MenuCorner-aq.MenuPadding,"Glass-1.4",{
 Size=UDim2.new(1,0,1,0),
 ThemeTag={
-ImageColor3=Color3.fromRGB(255,255,255),
+ImageColor3=Color3.fromRGB(235,245,255),
 },
-ImageTransparency=0.88,
+ImageTransparency=0.5,
 Name="Highlight",
 },{
 
