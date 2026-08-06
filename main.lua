@@ -2723,10 +2723,8 @@ ImageTransparency=0.8,
 ab.NewRoundFrame(an,"Squircle",{
 Size=UDim2.new(1,0,1,0),
 Name="Frame",
-ThemeTag={
-ImageColor3=Color3fromRGB(255,255,255),
+ImageColor3=Color3.fromRGB(255,255,255),
 ImageTransparency=0.88,
-},
 
 
 },{
@@ -4452,10 +4450,8 @@ Position=UDim2.new(0.5,0,0.5,0),
 ab.NewRoundFrame(ak,"Squircle",{
 Size=UDim2.new(1,0,1,0),
 Name="Frame",
-ThemeTag={
 ImageColor3=Color3.fromRGB(255,255,255),
 ImageTransparency=0.88,
-},
 
 
 },{
@@ -8235,9 +8231,7 @@ HorizontalAlignment="Center",
 })
 
 ap.UIElements.Menu=ak.NewRoundFrame(aq.MenuCorner,"Squircle",{
-ThemeTag={
 ImageColor3=Color3.fromRGB(255,255,255),
-},
 ImageTransparency=0.88,
 Size=UDim2.new(1,0,1,0),
 AnchorPoint=Vector2.new(1,0),
@@ -8519,17 +8513,13 @@ AutomaticSize=ay.Desc and"Y",
 ImageTransparency=0.85,
 Parent=ap.UIElements.Menu.Frame.ScrollingFrame,
 
-ThemeTag={
 ImageColor3=Color3.fromRGB(255,255,255),
-},
 Active=not ay.Locked,
 },
 {
 ak.NewRoundFrame(aq.MenuCorner-aq.MenuPadding,"Glass-1.4",{
 Size=UDim2.new(1,0,1,0),
-ThemeTag={
 ImageColor3=Color3.fromRGB(255,255,255),
-},
 ImageTransparency=0.6,
 Name="Highlight",
 },{
