@@ -2724,8 +2724,8 @@ ab.NewRoundFrame(an,"Squircle",{
 Size=UDim2.new(1,0,1,0),
 Name="Frame",
 ThemeTag={
-ImageColor3="LabelBackground",
-ImageTransparency="LabelBackgroundTransparency",
+ImageColor3=Color3fromRGB(255,255,255),
+ImageTransparency=0.88,
 },
 
 
@@ -4453,8 +4453,8 @@ ab.NewRoundFrame(ak,"Squircle",{
 Size=UDim2.new(1,0,1,0),
 Name="Frame",
 ThemeTag={
-ImageColor3="LabelBackground",
-ImageTransparency="LabelBackgroundTransparency",
+ImageColor3=Color3fromRGB(255,255,255),
+ImageTransparency=0.88,
 },
 
 
