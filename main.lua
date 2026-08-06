@@ -8478,7 +8478,7 @@ for ax,ay in next,ap.Tabs do
 if string.find(string.lower(ay.Name),string.lower(aw),1,true)then
 ay.UIElements.TabItem.Visible=true
 else
-ay.UIElements..Visible=false
+ay.UIElements.TabItem.Visible=false
 end
 RecalculateListSize()
 RecalculateCanvasSize()
