@@ -8282,7 +8282,19 @@ Active=false,
 Parent=ao.WindUI.DropdownGui,
 AnchorPoint=Vector2.new(1,0),
 },{
+ak.NewRoundFrame(
+aq.MenuCorner,
+"Glass-1.4",
+{
+Size=UDim2.new(1,0,1,0),
+ImageColor3=Color3.fromRGB(250,250,255),
+ImageTransparency=0.1,
+},
+{
 ap.UIElements.Menu,
+}
+),
+
 al("UISizeConstraint",{
 MinSize=Vector2.new(170,0),
 MaxSize=Vector2.new(300,400),
@@ -8422,19 +8434,33 @@ ax.UIElements.TabItem.Active=false
 ax.Locked=true
 else
 if ax.Selected then
-am(ax.UIElements.TabItem,0.1,{ImageTransparency=an}):Play()
+am(
+ax.UIElements.TabItem,
+0.15,
+{
+ImageTransparency=0.92
+}
+):Play()
 
 am(ax.UIElements.TabItem.Frame.Title.TextLabel,0.1,{TextTransparency=0}):Play()
 if ax.UIElements.TabIcon then
 am(ax.UIElements.TabIcon.ImageLabel,0.1,{ImageTransparency=0}):Play()
 end
 else
-am(ax.UIElements.TabItem,0.1,{ImageTransparency=1}):Play()
+am(
+ax.UIElements.TabItem,
+0.15,
+{
+ImageTransparency=0.82
+}
+):Play()
 
 am(
 ax.UIElements.TabItem.Frame.Title.TextLabel,
-0.1,
-{TextTransparency=ar=="Dropdown"and 0.4 or 0.05}
+0.15,
+{
+TextTransparency=ar=="Dropdown"and 0 or 0.05
+}
 ):Play()
 if ax.UIElements.TabIcon then
 am(
@@ -8506,11 +8532,11 @@ ay.UIElements.TabIcon=az
 end
 ay.UIElements.TabItem=ak.NewRoundFrame(
 aq.MenuCorner-aq.MenuPadding,
-"Squircle",
+"Glass-1.4",
 {
 Size=UDim2.new(1,0,0,36),
 AutomaticSize=ay.Desc and"Y",
-ImageTransparency=0.88,
+ImageTransparency=0.92,
 Parent=ap.UIElements.Menu.Frame.ScrollingFrame,
 
 ImageColor3=Color3.fromRGB(255,255,255),
@@ -8519,7 +8545,7 @@ Active=true,
 {
 ak.NewRoundFrame(aq.MenuCorner-aq.MenuPadding,"Glass-1.4",{
 Size=UDim2.new(1,0,1,0),
-ImageColor3=Color3.fromRGB(200,225,255),
+ImageColor3=Color3.fromRGB(180,210,255),
 ImageTransparency=1,
 Name="Highlight",
 },{
@@ -8566,14 +8592,14 @@ al("TextLabel",{
 Text=ay.Name,
 TextXAlignment="Left",
 FontFace=Font.new(ak.Font,Enum.FontWeight.Medium),
+TextColor3=Color3.fromRGB(30,30,30),
 ThemeTag={
-TextColor3="Text",
 BackgroundColor3="Text",
 },
 TextSize=15,
 BackgroundTransparency=1,
-TextTransparency=0.05,
-TextStrokeTransparency=0.92,
+TextTransparency=0,
+TextStrokeTransparency=0.75,
 TextStrokeColor3=Color3.fromRGB(255,255,255),
 LayoutOrder=999,
 AutomaticSize="Y",
@@ -8649,10 +8675,11 @@ ay.Selected=aA==ay.Name
 end
 
 if ay.Selected and not ay.Locked then
-ay.UIElements.TabItem.ImageTransparency=0.7
+ay.UIElements.TabItem.ImageTransparency=0.75
 ay.UIElements.TabItem.ImageColor3=Color3.fromRGB(200,225,255)
 
 ay.UIElements.TabItem.Frame.Title.TextLabel.TextTransparency=0
+ay.UIElements.TabItem.Frame.Title.TextLabel.TextColor3=Color3.fromRGB(10,10,10)
 if ay.UIElements.TabIcon then
 ay.UIElements.TabIcon.ImageLabel.ImageTransparency=0
 end
@@ -8732,7 +8759,12 @@ end)
 elseif ar=="Menu"then
 if not ay.Locked then
 ak.AddSignal(ay.UIElements.TabItem.MouseEnter,function()
-am(ay.UIElements.TabItem,0.08,{ImageTransparency=an}):Play()
+am(ay.UIElements.TabItem.Highlight,0.08,{ImageTransparency=0.82}):Play()
+am(ay.UIElements.TabItem.Frame.Title.TextLabel,0.08,{TextColor3=Color3.fromRGB(5,5,5)}):Play()
+end)
+ak.AddSignal(ay.UIElements.TabItem.InputEnded,function()
+am(ay.UIElements.TabItem.Highlight,0.08,{ImageTransparency=1}):Play()
+am(ay.UIElements.TabItem.Frame.Title.TextLabel,0.08,{TextColor3=Color3.fromRGB(40,40,40)}):Play()
 end)
 ak.AddSignal(ay.UIElements.TabItem.InputEnded,function()
 am(ay.UIElements.TabItem,0.08,{ImageTransparency=1}):Play()
