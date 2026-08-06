@@ -1,8 +1,3 @@
--- ============================================================
--- WindUI v1.6.65 完整代码（第1段/共3段）
--- 请按顺序拼接：段1 + 段2 + 段3 = 完整文件
--- ============================================================
-
 --[[
      _      ___         ____  ______
     | | /| / (_)__  ___/ / / / /  _/
@@ -19,7 +14,18 @@
     License: MIT
 ]]
 
-local a a={cache={}, load=function(b)if not a.cache[b]then a.cache[b]={c=a[b]()}end return a.cache[b].c end}do function a.a()
+type ConfigType__DARKLUA_TYPE_a={
+Object:Instance,
+Camera:Instance?,
+Interactive:boolean?,
+Height:number?,
+Focused:boolean,
+
+Window:any,
+WindUI:any,
+Tab:any,
+Parent:Instance,
+}local a a={cache={}, load=function(b)if not a.cache[b]then a.cache[b]={c=a[b]()}end return a.cache[b].c end}do function a.a()
 
 local b
 
@@ -1968,6 +1974,10 @@ return f end function a.g()
 local b=4294967296;local d=b-1;local function c(e,f)local g,h=0,1;while e~=0 or f~=0 do local i,l=e%2,f%2;local m=(i+l)%2;g=g+m*h;e=math.floor(e/2)f=math.floor(f/2)h=h*2 end;return g%b end;local function k(e,f,g,...)local h;if f then e=e%b;f=f%b;h=c(e,f)if g then h=k(h,g,...)end;return h elseif e then return e%b else return 0 end end;local function n(e,f,g,...)local h;if f then e=e%b;f=f%b;h=(e+f-c(e,f))/2;if g then h=n(h,g,...)end;return h elseif e then return e%b else return d end end;local function o(e)return d-e end;local function q(e,f)if f<0 then return lshift(e,-f)end;return math.floor(e%4294967296/2^f)end;local function s(e,f)if f>31 or f<-31 then return 0 end;return q(e%b,f)end;local function lshift(e,f)if f<0 then return s(e,-f)end;return e*2^f%4294967296 end;local function t(e,f)e=e%b;f=f%32;local g=n(e,2^f-1)return s(e,f)+lshift(g,32-f)end;local e={0x428a2f98,0x71374491,0xb5c0fbcf,0xe9b5dba5,0x3956c25b,0x59f111f1,0x923f82a4,0xab1c5ed5,0xd807aa98,0x12835b01,0x243185be,0x550c7dc3,0x72be5d74,0x80deb1fe,0x9bdc06a7,0xc19bf174,0xe49b69c1,0xefbe4786,0x0fc19dc6,0x240ca1cc,0x2de92c6f,0x4a7484aa,0x5cb0a9dc,0x76f988da,0x983e5152,0xa831c66d,0xb00327c8,0xbf597fc7,0xc6e00bf3,0xd5a79147,0x06ca6351,0x14292967,0x27b70a85,0x2e1b2138,0x4d2c6dfc,0x53380d13,0x650a7354,0x766a0abb,0x81c2c92e,0x92722c85,0xa2bfe8a1,0xa81a664b,0xc24b8b70,0xc76c51a3,0xd192e819,0xd6990624,0xf40e3585,0x106aa070,0x19a4c116,0x1e376c08,0x2748774c,0x34b0bcb5,0x391c0cb3,0x4ed8aa4a,0x5b9cca4f,0x682e6ff3,0x748f82ee,0x78a5636f,0x84c87814,0x8cc70208,0x90befffa,0xa4506ceb,0xbef9a3f7,0xc67178f2}local function w(f)return string.gsub(f,".",function(g)return string.format("%02x",string.byte(g))end)end;local function y(f,g)local h=""for i=1,g do local l=f%256;h=string.char(l)..h;f=(f-l)/256 end;return h end;local function D(f,g)local h=0;for i=g,g+3 do h=h*256+string.byte(f,i)end;return h end;local function E(f,g)local h=64-(g+9)%64;g=y(8*g,8)f=f.."\128"..string.rep("\0",h)..g;assert(#f%64==0)return f end;local function I(f)f[1]=0x6a09e667;f[2]=0xbb67ae85;f[3]=0x3c6ef372;f[4]=0xa54ff53a;f[5]=0x510e527f;f[6]=0x9b05688c;f[7]=0x1f83d9ab;f[8]=0x5be0cd19;return f end;local function K(f,g,h)local i={}for l=1,16 do i[l]=D(f,g+(l-1)*4)end;for l=17,64 do local m=i[l-15]local p=k(t(m,7),t(m,18),s(m,3))m=i[l-2]i[l]=(i[l-16]+p+i[l-7]+k(t(m,17),t(m,19),s(m,10)))%b end;local l,m,p,r,u,v,x,z=h[1],h[2],h[3],h[4],h[5],h[6],h[7],h[8]for A=1,64 do local B=k(t(l,2),t(l,13),t(l,22))local C=k(n(l,m),n(l,p),n(m,p))local F=(B+C)%b;local G=k(t(u,6),t(u,11),t(u,25))local H=k(n(u,v),n(o(u),x))local J=(z+G+H+e[A]+i[A])%b;z=x;x=v;v=u;u=(r+J)%b;r=p;p=m;m=l;l=(J+F)%b end;h[1]=(h[1]+l)%b;h[2]=(h[2]+m)%b;h[3]=(h[3]+p)%b;h[4]=(h[4]+r)%b;h[5]=(h[5]+u)%b;h[6]=(h[6]+v)%b;h[7]=(h[7]+x)%b;h[8]=(h[8]+z)%b end;local function Z(f)f=E(f,#f)local g=I{}for h=1,#f,64 do K(f,h,g)end;return w(y(g[1],4)..y(g[2],4)..y(g[3],4)..y(g[4],4)..y(g[5],4)..y(g[6],4)..y(g[7],4)..y(g[8],4))end;local f;local g={["\\"]="\\",["\""]="\"",["\b"]="b",["\f"]="f",["\n"]="n",["\r"]="r",["\t"]="t"}local h={["/"]="/"}for i,l in pairs(g)do h[l]=i end;local i=function(i)return"\\"..(g[i]or string.format("u%04x",i:byte()))end;local l=function(l)return"null"end;local m=function(m,p)local r={}p=p or{}if p[m]then error"circular reference"end;p[m]=true;if rawget(m,1)~=nil or next(m)==nil then local u=0;for v in pairs(m)do if type(v)~="number"then error"invalid table: mixed or invalid key types"end;u=u+1 end;if u~=#m then error"invalid table: sparse array"end;for v,x in ipairs(m)do table.insert(r,f(x,p))end;p[m]=nil;return"["..table.concat(r,",").."]"else for u,v in pairs(m)do if type(u)~="string"then error"invalid table: mixed or invalid key types"end;table.insert(r,f(u,p)..":"..f(v,p))end;p[m]=nil;return"{"..table.concat(r,",").."}"end end;local p=function(p)return'"'..p:gsub('[%z\1-\31\\"]',i)..'"'end;local r=function(r)if r~=r or r<=-math.huge or r>=math.huge then error("unexpected number value '"..tostring(r).."'")end;return string.format("%.14g",r)end;local u={["nil"]=l,table=m,string=p,number=r,boolean=tostring}f=function(v,x)local z=type(v)local A=u[z]if A then return A(v,x)end;error("unexpected type '"..z.."'")end;local v=function(v)return f(v)end;local x;local z=function(...)local z={}for A=1,select("#",...)do z[select(A,...)]=true end;return z end;local A=z(" ","\t","\r","\n")local B=z(" ","\t","\r","\n","]","}",",")local C=z("\\","/",'"',"b","f","n","r","t","u")local F=z("true","false","null")local G={["true"]=true,["false"]=false,null=nil}local H=function(H,J,L,M)for N=J,#H do if L[H:sub(N,N)]~=M then return N end end;return#H+1 end;local J=function(J,L,M)local N=1;local O=1;for P=1,L-1 do O=O+1;if J:sub(P,P)=="\n"then N=N+1;O=1 end end;error(string.format("%s at line %d col %d",M,N,O))end;local L=function(L)local M=math.floor;if L<=0x7f then return string.char(L)elseif L<=0x7ff then return string.char(M(L/64)+192,L%64+128)elseif L<=0xffff then return string.char(M(L/4096)+224,M(L%4096/64)+128,L%64+128)elseif L<=0x10ffff then return string.char(M(L/262144)+240,M(L%262144/4096)+128,M(L%4096/64)+128,L%64+128)end;error(string.format("invalid unicode codepoint '%x'",L))end;local M=function(M)local N=tonumber(M:sub(1,4),16)local O=tonumber(M:sub(7,10),16)if O then return L((N-0xd800)*0x400+O-0xdc00+0x10000)else return L(N)end end;local N=function(N,O)local P=""local Q=O+1;local R=Q;while Q<=#N do local S=N:byte(Q)if S<32 then J(N,Q,"control character in string")elseif S==92 then P=P..N:sub(R,Q-1)Q=Q+1;local T=N:sub(Q,Q)if T=="u"then local U=N:match("^[dD][89aAbB]%x%x\\u%x%x%x%x",Q+1)or N:match("^%x%x%x%x",Q+1)or J(N,Q-1,"invalid unicode escape in string")P=P..M(U)Q=Q+#U else if not C[T]then J(N,Q-1,"invalid escape char '"..T.."' in string")end;P=P..h[T]end;R=Q+1 elseif S==34 then P=P..N:sub(R,Q-1)return P,Q+1 end;Q=Q+1 end;J(N,O,"expected closing quote for string")end;local O=function(O,P)local Q=H(O,P,B)local R=O:sub(P,Q-1)local S=tonumber(R)if not S then J(O,P,"invalid number '"..R.."'")end;return S,Q end;local P=function(P,Q)local R=H(P,Q,B)local S=P:sub(Q,R-1)if not F[S]then J(P,Q,"invalid literal '"..S.."'")end;return G[S],R end;local Q=function(Q,R)local S={}local T=1;R=R+1;while 1 do local U;R=H(Q,R,A,true)if Q:sub(R,R)=="]"then R=R+1;break end;U,R=x(Q,R)S[T]=U;T=T+1;R=H(Q,R,A,true)local V=Q:sub(R,R)R=R+1;if V=="]"then break end;if V~=","then J(Q,R,"expected ']' or ','")end end;return S,R end;local R=function(R,S)local T={}S=S+1;while 1 do local U,V;S=H(R,S,A,true)if R:sub(S,S)=="}"then S=S+1;break end;if R:sub(S,S)~='"'then J(R,S,"expected string for key")end;U,S=x(R,S)S=H(R,S,A,true)if R:sub(S,S)~=":"then J(R,S,"expected ':' after key")end;S=H(R,S+1,A,true)V,S=x(R,S)T[U]=V;S=H(R,S,A,true)local W=R:sub(S,S)S=S+1;if W=="}"then break end;if W~=","then J(R,S,"expected '}' or ','")end end;return T,S end;local S={['"']=N,["0"]=O,["1"]=O,["2"]=O,["3"]=O,["4"]=O,["5"]=O,["6"]=O,["7"]=O,["8"]=O,["9"]=O,["-"]=O,t=P,f=P,n=P,["["]=Q,["{"]=R}x=function(T,U)local V=T:sub(U,U)local W=S[V]if W then return W(T,U)end;J(T,U,"unexpected character '"..V.."'")end;local T=function(T)if type(T)~="string"then error("expected argument of type string, got "..type(T))end;local U,V=x(T,H(T,1,A,true))V=H(T,V,A,true)if V<=#T then J(T,V,"trailing garbage")end;return U end;
 local U,V,W=v,T,Z;
 
+
+
+
+
 local X={}
 
 local Y=(cloneref or clonereference or function(Y)return Y end)
@@ -2800,18 +2810,19 @@ end
 af=af or"Dialog"
 
 if not ae then
-aj.UIElements.FullScreen = ab("Frame",{
-    ZIndex=999,
-    BackgroundTransparency=0.15,
-    BackgroundColor3=Color3.fromRGB(255,255,255),
-    Size=UDim2.new(1,0,1,0),
-    Active=false,
-    Visible=false,
-    Parent=ad.Parent or(ag and ag.UIElements and ag.UIElements.Main and ag.UIElements.Main.Main),
+aj.UIElements.FullScreen=ab("Frame",{
+ZIndex=999,
+BackgroundTransparency=1,
+BackgroundColor3=Color3.fromHex"#000000",
+Size=UDim2.new(1,0,1,0),
+Active=false,
+Visible=false,
+Parent=ad.Parent
+or(ag and ag.UIElements and ag.UIElements.Main and ag.UIElements.Main.Main),
 },{
-    ab("UICorner",{
-        CornerRadius=UDim.new(0,ag.UICorner),
-    }),
+ab("UICorner",{
+CornerRadius=UDim.new(0,ag.UICorner),
+}),
 })
 end
 
@@ -2849,18 +2860,20 @@ PaddingBottom=UDim.new(0,aj.UIPadding),
 }),
 })
 
-aj.UIElements.MainContainer = aa.NewRoundFrame(aj.UICorner,"Squircle",{
-    Visible=false,
-    ImageTransparency=0.9,
-    Parent=ai or aj.UIElements.FullScreen,
-    Position=UDim2.new(0.5,0,0.5,0),
-    AnchorPoint=Vector2.new(0.5,0.5),
-    AutomaticSize="XY",
-    ImageColor3=Color3.fromRGB(255,255,255),
-    ZIndex=9999,
+aj.UIElements.MainContainer=aa.NewRoundFrame(aj.UICorner,"Squircle",{
+Visible=false,
+
+ImageTransparency=ae and 0.15 or 0,
+Parent=ai or aj.UIElements.FullScreen,
+Position=UDim2.new(0.5,0,0.5,0),
+AnchorPoint=Vector2.new(0.5,0.5),
+AutomaticSize="XY",
+ThemeTag={
+ImageColor3=af.."Background",
+ImageTransparency=af.."BackgroundTransparency",
+},
+ZIndex=9999,
 },{
-    aj.UIElements.Main,
-})
 
 
 
@@ -3998,46 +4011,33 @@ return aa end function a.v()
 return function(aa,ab)
 return{
 Dark={
-    Name="Dark",
+Name="Dark",
 
-    Accent=Color3.fromRGB(255,255,255),
-    AccentTransparency=0.9,
-    Dialog=Color3.fromRGB(255,255,255),
-    DialogTransparency=0.9,
-    Outline=Color3.fromRGB(255,255,255),
-    OutlineTransparency=0.3,
-    Text=Color3.fromRGB(255,255,255),
-    TextTransparency=0.05,
-    Placeholder=Color3.fromRGB(255,255,255),
-    PlaceholderTransparency=0.5,
-    Background=Color3.fromRGB(255,255,255),
-    BackgroundTransparency=0.9,
-    Button=Color3.fromRGB(255,255,255),
-    ButtonTransparency=0.85,
-    Icon=Color3.fromRGB(255,255,255),
-    IconTransparency=0.3,
-    Toggle=Color3.fromRGB(100,180,255),
-    Slider=Color3.fromRGB(100,180,255),
-    Checkbox=Color3.fromRGB(100,180,255),
+Accent=Color3.fromHex"#18181b",
+Dialog=Color3.fromHex"#1a1a1a",
+Outline=Color3.fromHex"#FFFFFF",
+Text=Color3.fromHex"#FFFFFF",
+Placeholder=Color3.fromHex"#a1a1a1",
+Background=Color3.fromHex"#101010",
+Button=Color3.fromHex"#52525b",
+Icon=Color3.fromHex"#a1a1aa",
+Toggle=Color3.fromHex"#33C759",
+Slider=Color3.fromHex"#0091FF",
+Checkbox=Color3.fromHex"#0091FF",
 
-    PanelBackground=Color3.fromRGB(255,255,255),
-    PanelBackgroundTransparency=0.92,
+PanelBackground=Color3.fromHex"#FFFFFF",
+PanelBackgroundTransparency=0.95,
 
-    SliderIcon=Color3.fromRGB(255,255,255),
-    SliderIconTransparency=0.3,
-    Primary=Color3.fromRGB(100,180,255),
+SliderIcon=Color3.fromHex"#908F95",
+Primary=Color3.fromHex"#0091FF",
 
-    LabelBackground=Color3.fromRGB(255,255,255),
-    LabelBackgroundTransparency=0.88,
 
-    ElementBackground=Color3.fromRGB(255,255,255),
-    ElementBackgroundTransparency=0.88,
+LabelBackground=Color3.fromHex"#000000",
+LabelBackgroundTransparency=0.83,
 
-    DropdownBackground=Color3.fromRGB(255,255,255),
-    DropdownBackgroundTransparency=0.9,
-    DropdownTabBackground=Color3.fromRGB(255,255,255),
-    DropdownTabBackgroundTransparency=0.88,
-}
+ElementBackground=Color3.fromHex"#2A2A2C",
+ElementBackgroundTransparency=0,
+},
 
 Light={
 Name="Light",
@@ -5264,9 +5264,9 @@ Size=UDim2.new(0,0,0,44),
 AutomaticSize="X",
 Parent=al,
 Active=false,
-BackgroundTransparency=.25,
+BackgroundTransparency=0.7,
 ZIndex=99,
-BackgroundColor3=Color3.new(0,0,0),
+BackgroundColor3=Color3.fromRGB(255,255,255),
 },{
 am,
 ac("UICorner",{
@@ -13269,13 +13269,17 @@ AnchorPoint=Vector2.new(1,1),
 BackgroundTransparency=1,
 },{
 an.NewRoundFrame(aw.UICorner-(aw.UIPadding/2),"Squircle",{
-    Size=UDim2.new(1,0,1,0),
-    ImageColor3=Color3.fromRGB(255,255,255),
-    ImageTransparency=0.9,
-    ZIndex=3,
-    Name="Background",
-    Visible=not aw.HidePanelBackground,
-})
+Size=UDim2.new(1,0,1,0),
+ThemeTag={
+ImageColor3="PanelBackground",
+ImageTransparency="PanelBackgroundTransparency",
+},
+
+
+ZIndex=3,
+Name="Background",
+Visible=not aw.HidePanelBackground,
+}),
 ao("UIPadding",{
 
 PaddingLeft=UDim.new(0,aw.UIPadding/2),
@@ -13703,17 +13707,23 @@ av.WindUI.UIScaleObj,
 aw.AcrylicPaint and aw.AcrylicPaint.Frame or nil,
 b,
 an.NewRoundFrame(aw.UICorner,"Squircle",{
-    ImageTransparency=0.9,
-    Size=UDim2.new(1,0,1,0),
-    AnchorPoint=Vector2.new(0.5,0.5),
-    Position=UDim2.new(0.5,0,0.5,0),
-    Name="Background",
-    ImageColor3=Color3.fromRGB(255,255,255),
+ImageTransparency=1,
+Size=UDim2.new(1,0,1,0),
+AnchorPoint=Vector2.new(0.5,0.5),
+Position=UDim2.new(0.5,0,0.5,0),
+Name="Background",
+ThemeTag={
+ImageColor3="WindowBackground",
+},
+
 },{
-    i,
-    r,
-    az,
-})
+i,
+r,
+az,
+}),
+
+
+
 
 ay,
 aA,
@@ -14317,7 +14327,7 @@ end
 aw.UIElements.Main.Background.ImageTransparency=1
 ap(aw.UIElements.Main.Background,0.4,{
 
-ImageTransparency=aw.Transparent and av.WindUI.TransparencyValue or 0.9,
+ImageTransparency=aw.Transparent and av.WindUI.TransparencyValue or 0,
 },Enum.EasingStyle.Exponential,Enum.EasingDirection.Out):Play()
 
 if i then
@@ -14934,26 +14944,27 @@ J=true
 
 aw:Dialog{
 
-aw:Dialog{
-    Title="关闭窗口",
-    Content="确定要关闭吗",
-    Buttons={
-        {
-            Title="取消",
-            Callback=function()
-                J=false
-            end,
-            Variant="Secondary",
-        },
-        {
-            Title="关闭窗口",
-            Callback=function()
-                J=false
-                aw:Destroy()
-            end,
-            Variant="Primary",
-        },
-    },
+Title="Close Window",
+Content="Do you want to close this window? You will not be able to open it again.",
+Buttons={
+{
+Title="Cancel",
+
+Callback=function()
+J=false
+end,
+Variant="Secondary",
+},
+{
+Title="Close Window",
+
+Callback=function()
+J=false
+aw:Destroy()
+end,
+Variant="Primary",
+},
+},
 }
 else
 aw:Destroy()
