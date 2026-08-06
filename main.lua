@@ -4033,8 +4033,8 @@ Primary=Color3.fromHex"#0091FF",
 LabelBackground=Color3.fromHex"#000000",
 LabelBackgroundTransparency=0.83,
 
-ElementBackground=Color3.fromRGB(235,245,255),
-ElementBackgroundTransparency=0.8,
+ElementBackground=Color3.fromRGB(255,255,255),
+ElementBackgroundTransparency=0.85,
 },
 
 Light={
