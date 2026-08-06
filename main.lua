@@ -8478,7 +8478,7 @@ for ax,ay in next,ap.Tabs do
 if string.find(string.lower(ay.Name),string.lower(aw),1,true)then
 ay.UIElements.TabItem.Visible=true
 else
-ay.UIElements.TabItem.Visible=false
+ay.UIElements..Visible=false
 end
 RecalculateListSize()
 RecalculateCanvasSize()
@@ -8516,11 +8516,11 @@ aq.MenuCorner-aq.MenuPadding,
 {
 Size=UDim2.new(1,0,0,36),
 AutomaticSize=ay.Desc and"Y",
-ImageTransparency=0.85,
+ImageTransparency=0.88,
 Parent=ap.UIElements.Menu.Frame.ScrollingFrame,
 
 ThemeTag={
-ImageColor3=Color3.fromRGB(235,245,255),
+ImageColor3=Color3.fromRGB(255,255,255),
 },
 Active=not ay.Locked,
 },
@@ -8528,9 +8528,9 @@ Active=not ay.Locked,
 ak.NewRoundFrame(aq.MenuCorner-aq.MenuPadding,"Glass-1.4",{
 Size=UDim2.new(1,0,1,0),
 ThemeTag={
-ImageColor3=Color3.fromRGB(235,245,255),
+ImageColor3=Color3.fromRGB(255,255,255),
 },
-ImageTransparency=0.7,
+ImageTransparency=0.88，
 Name="Highlight",
 },{
 
