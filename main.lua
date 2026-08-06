@@ -8530,7 +8530,7 @@ Size=UDim2.new(1,0,1,0),
 ThemeTag={
 ImageColor3=Color3.fromRGB(235,245,255),
 },
-ImageTransparency=0.5,
+ImageTransparency=0.7,
 Name="Highlight",
 },{
 
@@ -8577,7 +8577,7 @@ Text=ay.Name,
 TextXAlignment="Left",
 FontFace=Font.new(ak.Font,Enum.FontWeight.Medium),
 ThemeTag={
-TextColor3="Text",
+TextColor3=Color3.fromRGB(60,60,60),
 BackgroundColor3="Text",
 },
 TextSize=15,
