@@ -8230,7 +8230,7 @@ FillDirection="Vertical",
 HorizontalAlignment="Center",
 })
 
-ap.UIElements.Menu=ak.NewRoundFrame(aq.MenuCorner,"Squircle",{
+ap.UIElements.Menu=ak.NewRoundFrame(aq.MenuCorner,"Glass-1.4",{
 ImageColor3=Color3.fromRGB(255,255,255),
 ImageTransparency=0.88,
 Size=UDim2.new(1,0,1,0),
@@ -8282,18 +8282,7 @@ Active=false,
 Parent=ao.WindUI.DropdownGui,
 AnchorPoint=Vector2.new(1,0),
 },{
-ak.NewRoundFrame(
-aq.MenuCorner,
-"Glass-1.4",
-{
-Size=UDim2.new(1,0,1,0),
-ImageColor3=Color3.fromRGB(250,250,255),
-ImageTransparency=0.1,
-},
-{
 ap.UIElements.Menu,
-}
-),
 
 al("UISizeConstraint",{
 MinSize=Vector2.new(170,0),
@@ -8378,7 +8367,11 @@ or""
 end
 
 if ap.UIElements.Dropdown then
-ap.UIElements.Dropdown.Frame.Frame.TextLabel.Text=(aw==""and"--"or aw)
+local TextLabel=ap.UIElements.Dropdown.Frame.Frame.TextLabel
+
+TextLabel.Text=(aw==""and"--"or aw)
+TextLabel.TextTransparency=0
+TextLabel.TextColor3=Color3.fromRGB(30,30,30)
 end
 end
 
@@ -8753,7 +8746,11 @@ if ay.UIElements.TabIcon then
 am(ay.UIElements.TabIcon.ImageLabel,0.1,{ImageTransparency=0}):Play()
 end
 ap.Value=ay.Original
-end
+
+as:Close()
+
+as:Display()
+
 Callback()
 end)
 elseif ar=="Menu"then
